@@ -22,7 +22,9 @@
     "lint:web-ext": "web-ext lint -s add-on/",
     "git:push": "run-s test git:commit",
     "git:commit": "run-s clean lint build",
-    "firefox": "web-ext run -s add-on/ --browser-console"
+    "firefox": "web-ext run -s add-on/ --browser-console",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "private": true,
   "preferGlobal": false,
@@ -63,6 +65,8 @@
   "dependencies": {
     "ipfs-api": "12.1.7",
     "is-ipfs": "0.3.0",
-    "lru_map": "0.3.2"
-  }
+    "lru_map": "0.3.2",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
